@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+    #bloco {
+      width: 200px;
+      height: 200px;
+      background-color: black;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <p id="bloco"></p>
+  <p id="texto"></p>
+
+  <script>
+    $(document).ready(() => {
+      // Ação por click
+      $("#bloco").click(() => {
+        $("#texto").text("CFB Curso")
+      })
+
+      // Ação por mouse - Entrou no Quadrado
+      $("#bloco").mouseenter(() => {
+        $("#texto").text("Mouse passou")
+      })
+
+      // Ação por mouse - Saiu do Quadrado 
+      $("#bloco").mouseleave(() => {
+        $("#texto").text("Mouse saiu")
+      })
+
+      // Ação por mouse - Mover sobre o Quadrado
+      $("#bloco").mousemove(() => {
+        $("#texto").text("Mouse movendo sobre o Quadrado")
+      })
+    })
+  </script>
+</body>
+</html>
