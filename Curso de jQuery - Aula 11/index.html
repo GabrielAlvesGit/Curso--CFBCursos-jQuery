@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+ 
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <div>
+    <ul>
+      <li>
+        <h3>CFB Curso</h3>
+        <span>Curso de JQuery</span>
+        <p>Seletores parent</p>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    $(document).ready(() => {
+      // Parent: Pega o elemento direto acima dele.
+      // Parents: Pega todos os elementos acima dele.
+      // ParentsUntil: Pega todos os elementos acima dele até aquele elemento, exemplo: até a "div".
+      $("p").parents().css({'border' : '1px solid red'});
+      // $("li").parent().css({'border' : '1px solid blue'});
+      // $("ul").parent().css({'border' : '1px solid green'});
+      // $("div").parent().css({'border' : '1px solid yellow'});
+      // $("body").parent().css({'border' : '1px solid magrenta'});
+    })
+  </script>
+</body>
+</html>
