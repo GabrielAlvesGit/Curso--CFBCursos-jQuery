@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+    p {
+      background-color:  #ffa;
+    }
+
+    h3 {
+      background-color:  #aff;
+    }
+
+    p {
+      background-color:  #afa;
+    }
+
+    .borda {
+      border:  2px solid red;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <p class="borda">CFB Curso</p>
+  <h3>CFB Curso</h3>
+  
+  <p class="borda">Curso de canvas</p>
+  <h3>Curso de canvas</h3>
+  
+  <p>youtub.com/cfbcursos</p>
+  <h3>youtub.com/cfbcursos</h3>
+  
+  <p>www.cfbcursos.com.br</p>
+  <h3>www.cfbcursos.com.br</h3>
+  
+  <p>filtrando elementos</p>
+  <h3>filtrando elementos</h3>
+
+  <script>
+    $(document).ready(() =>{
+      // filter: Somente os <p> que estão com bordas.
+      // not: quem não tiver a borda como estão sem bordas.
+      $("p").filter(".borda").css({"border" : "1px solid red"});
+      $("p").not(".borda").css({"border" : "1px solid blue"});
+
+    });
+  </script>
+</body>
+</html>
