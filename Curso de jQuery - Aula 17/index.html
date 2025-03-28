@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+    .vermelho {
+      border: 1ps solid #333;
+      width: 222px;
+      height: 222px;
+      background-color: red;
+    }
+
+    .azul {
+      border: 1ps solid #333;
+      width: 222px;
+      height: 222px;
+      background-color: blue;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="caixa" class="vermelho">
+    <h2>CFB Cursos</h2>
+    <h2>Curso de jquery</h2>
+  </div>
+  <button id="btn_vermelho">Vermelho</button>
+  <button id="btn_azul">Azul</button>
+ 
+  <script>
+    $(document).ready(() =>{
+     $("#btn_vermelho").click( 
+        function() {
+         $('#caixa').attr('class', 'vermelho');
+        }
+      );
+     $("#btn_azul").click( 
+        function() {
+         $('#caixa').attr('class', 'azul');
+        }
+      );
+    });
+  </script>
+</body>
+</html>
