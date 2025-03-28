@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+    .caixa {
+      border: 1ps solid #333;
+      width: 222px;
+      height: 222px;
+      background-color: #aaa;
+      position: absolute;
+      left: 0px;
+      top: 50px;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="caixa" class="caixa">
+    <h2>CFB Cursos</h2>
+    <h2>Curso de jquery</h2>
+  </div>
+  <button id="btn_aumentar">Aumentar</button>
+  <button id="btn_diminuir">Diminuir</button>
+  <button id="btn_esquerda">Esquerda</button>
+  <button id="btn_direita">Direita</button>
+ 
+  <script>
+    $(document).ready(() => {
+      // Aumentar a box
+      $('#btn_aumentar').click(
+        function(){
+          $('#caixa').animate({width: "555px", height: "555px"});
+        }
+      );
+
+      // Diminuir a box
+      $('#btn_diminuir').click(
+        function(){
+          $('#caixa').animate({width: "222px"},{duration: 3}).animate({height: "222px"},{duration: 3});
+        }
+      );
+
+      // Mover para a direita
+      $('#btn_direita').click(
+        function(){
+          $('#caixa').animate({left: "555px"},{duration: 2222, complete:()=>{alert('movimentação terminou')}});
+        }
+      );
+
+      // Mover para a esquerda
+      $('#btn_esquerda').click(
+        function(){
+          $('#caixa').animate({left: "1px"},{duration: 222, complete:()=>{alert('movimentação terminou')}});
+        }
+      );
+
+      
+    });
+  </script>
+</body>
+</html>
