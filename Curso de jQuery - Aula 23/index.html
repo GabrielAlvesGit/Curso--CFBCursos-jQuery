@@ -24,23 +24,28 @@
     <h2>CFB Cursos</h2>
     <h2>Curso de jquery</h2>
   </div>
-  <button id="btn_aumentar">Aumentar</button>
-  <button id="btn_diminuir">Diminuir</button>
+  <button id="btn_aumentar">Mostrar</button>
   <button id="btn_mostrar">Ocultar</button>
+  <button id="btn_ocultarmostrar">Ocultar / Mostrar</button>
  
   <script>
     $(document).ready(() => {
-      // Aumentar a box
       $('#btn_aumentar').click(
         function(){
-          // Usando com Delay
-          $('#caixa').delay(2000).animate({width: "500px"}).delay(2000).animate({height: "500px"}).delay(2000).animate({width: "200px"}).delay(2000).animate({height: "200px"});
+          $('#caixa').fadeIn(1000);
         }
       );
-      $('#btn_diminuir').click(
+
+      $('#btn_mostrar').click(
         function(){
-          // Usando sem Delay
-          $('#caixa').animate({width: "500px"}).animate({height: "500px"}).animate({width: "200px"}).animate({height: "200px"});
+          $('#caixa').fadeOut(1000);
+        }
+      );
+
+      // Demora um pouco para mostrar
+      $('#btn_ocultarmostrar').click(
+        function(){
+          $('#caixa').fadeOut().delay(1000).fadeIn();
         }
       );
      
