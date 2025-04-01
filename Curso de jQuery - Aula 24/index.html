@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+   }
+
+   .menu {
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .itemMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #128;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+   }
+
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+<div id="menu"  class="menu">
+  <div class="itemMenu">home</div>
+  <div class="itemMenu">jquery</div>
+  <div class="itemMenu">canvas</div>
+  <div class="itemMenu">python</div>
+  <div class="itemMenu">Arduino</div>
+</div>
+ 
+  <script>
+    $(document).ready(() => {
+      $('.itemMenu').mouseover(
+        function (){
+          $(this).fadeTo(10, 0.1); 
+      });
+
+      $('.itemMenu').mouseleave(
+        function (){
+          $(this).fadeTo(10, 0.1); 
+      });
+    });
+  </script>
+</body>
+</html>
