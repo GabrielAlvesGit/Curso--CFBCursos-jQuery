@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+   }
+
+   .caixa{
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+  <p>
+    <button id="btnAumentar">Aumentar</button>
+    <button id="btnDiminuir">Diminuir</button>
+  </p>
+
+  <p>
+    <button id="btnFinalizar">Finalizar</button>
+  </p>
+
+  <div id="caixa" class="caixa">
+
+  </div>
+ 
+  <script>
+    $(document).ready(() => {
+      $('#btnAumentar').click(function () { 
+        $('#caixa').animate({width: "800px"}, 500)
+       });
+
+       $('#btnDiminuir').click(function () {
+        $("#caixa").animate({width: "100"}, 500)
+       });
+
+       $("#btnFinalizar").click(function (){
+        $("#caixa").finish();
+       });
+    });
+  </script>
+</body>
+</html>
