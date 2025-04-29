@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+  
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .caixa {
+    display: flex;
+    background-color: #bbb;
+    border: 1px solid #1111;
+    border-radius: 10px 0 0 0; 
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px; 
+   }
+  
+   .subcaixa {
+    border: 1px solid #111;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 10px 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+   }
+
+   .texto {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+ <p>
+  <button id="btnAdicionarAntes">Adicionar Antes</button>
+  <button id="btnAdicionarDepois">Adicionar Depois</button>
+  <button id="btnAdicionarTextoAntes">Adicionar Texto Antes</button>
+  <button id="btnAdicionarTextoDepois">Adicionar Texto Depois</button> 
+ </p>
+
+ <div id="caixa" class="caixa"></div>
+ <div id="caixa2" class="caixa"></div>
+ 
+  <script>
+    let r, g, b;
+    let num = 0;
+
+    $(document).ready(() => {
+    
+      $('#btnAdicionarAntes').click(() => {
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+        
+        $('#caixa').after(`<div class='subcaixa' style='background-color:rgb(${r}, ${g}, ${b})'>${num}</div>`);
+        num++;
+      });
+
+      $('#btnAdicionarDepois').click(() => {
+          r = Math.floor(Math.random() * 255);
+          g = Math.floor(Math.random() * 255);
+          b = Math.floor(Math.random() * 255);
+          $('#caixa').before(`<div class='subcaixa' style='background-color:rgb(${r}, ${g}, ${b})'>${num}</div>`);
+          num++;
+      });
+ 
+      $('#btnAdicionarTextoAntes').click(() => {
+        $('#caixa2').after("<div class='texto'>Curso de JQuery - Antes</div>");
+      });
+  
+      $('#btnAdicionarTextoDepois').click(() => {
+          $('#caixa2').before("<div class='texto'>Curso de JQuery - Depois</div>");
+      });
+    });
+  </script>
+</body>
+</html>
