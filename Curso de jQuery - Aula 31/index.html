@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+   }
+
+   .caixa {
+    display: flex;
+    background-color: #bbb;
+    border: 1px solid #1111;
+    border-radius: 10px 0 0 0; 
+    width: 100%;
+    flex-wrap: wrap;
+   }
+
+   .subcaixa {
+    border: 1px solid #111;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 10px 10px; 
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+ <p>
+  <button id="btnAdicionar">Adicionar</button>
+  <button id="btnAdicionar5">Adicionar 5x</button>
+ </p>
+
+ <div id="caixa" class="caixa"></div>
+ 
+  <script>
+    let r,g,b 
+    $(document).ready(() => {
+      $('#btnAdicionar').click(() => {
+        r = Math.floor(Math.random()*255)
+        g = Math.floor(Math.random()*255)
+        b = Math.floor(Math.random()*255)
+        $('#caixa').append("<div class='subcaixa' style='background-color:rgb("+r+", "+g+", "+b+")'></div>") 
+      })
+
+      $('#btnAdicionar5').click(() => {
+        for (let i=0;i<5;i++){
+          r = Math.floor(Math.random()*255)
+          g = Math.floor(Math.random()*255)
+          b = Math.floor(Math.random()*255)
+          $('#caixa').append("<div class='subcaixa' style='background-color:rgb("+r+", "+g+", "+b+")'></div>");
+        }
+      })
+    })
+
+  </script>
+</body>
+</html>
