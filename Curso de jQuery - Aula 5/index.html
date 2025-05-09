@@ -44,30 +44,42 @@
 </head>
 <body>
  <p>
-  <button id="btnVerde">Adicionar</button>
-  <button id="btnVermelho">Remover elemento</button>
-  <button id="btnAzul">Remover elemento</button>
+  <button id="btnAdicionar">Adicionar</button>
+  <button id="btnRemover">Remover elemento</button>
+  <button id="btnRemoverConteudo">Remover elemento</button>
  </p>
 
  <div id="caixa" class="caixa"></div>
  <div id="caixa2" class="caixa"></div>
  
   <script>
+    let r, g, b;
+    let num = 0;
 
     $(document).ready(() => {
-      $('#btnVerde').click(() => {
-        $('#caixa').css({"background-color": "#0f0","color":"#f0f"})
+    
+      $('#btnAdicionar').click(() => {
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+        
+        $('#caixa').append("<div id='d"+num+"' class='subcaixa' style='background-color:rgb("+r+", "+g+"}, "+b+")'>"+num+"</div>");
+        num++;
       });
 
-      $('#btnVermelho').click(() => {
-        $('#caixa').css({"background-color": "#f00","color":"#0ff"})
-      });
-
-      $('#btnAzul').click(() => {
-        $('#caixa').css({"background-color": "#00f","color":"#ff0"})
-      });
+             
+      $('#btnRemover').click(() => {
+        let div =$("#d0")
+        $("#d"+(num-1)).remove();
+        num--
+      })
+      
+      $('#btnRemoverConteudo').click(() => {
+        let div =$("#d0")
+          $("#caixa").empty();
+      })
+       
     });
-  
   </script>
 </body>
 </html>
