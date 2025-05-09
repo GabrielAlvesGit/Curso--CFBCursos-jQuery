@@ -23,30 +23,25 @@
     padding: 10px; 
    }
   
-   .subcaixa {
-    border: 1px solid #111;
-    width: 100px;
-    height: 100px;
-    margin: 0 0 10px 10px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
-   }
+  .verde {
+    background-color: #0f0;
+  }
 
-   .texto {
-    margin: 10px;
-    font-size: 16px;
-    font-weight: bold;
-   }
+  .azul {
+    background-color: #00f;
+  }
+
+  .vermelho {
+    background-color: #f00;
+  }
   </style>
   <title>Document</title>
 </head>
 <body>
  <p>
-  <button id="btnVerde">Adicionar</button>
-  <button id="btnVermelho">Remover elemento</button>
-  <button id="btnAzul">Remover elemento</button>
+  <button id="btnVerde">Verde</button>
+  <button id="btnVermelho">Vermelho</button>
+  <button id="btnAzul">Azul</button>
  </p>
 
  <div id="caixa" class="caixa"></div>
@@ -56,15 +51,21 @@
 
     $(document).ready(() => {
       $('#btnVerde').click(() => {
-        $('#caixa').css({"background-color": "#0f0","color":"#f0f"})
+        $('#caixa').removeClass("azul")
+        $('#caixa').removeClass("vermelho")
+        $('#caixa').addClass("verde")
       });
 
       $('#btnVermelho').click(() => {
-        $('#caixa').css({"background-color": "#f00","color":"#0ff"})
+        $('#caixa').removeClass("azul")
+        $('#caixa').addClass("vermelho")
+        $('#caixa').removeClass("verde")
       });
 
       $('#btnAzul').click(() => {
-        $('#caixa').css({"background-color": "#00f","color":"#ff0"})
+        $('#caixa').addClass("azul")
+        $('#caixa').removeClass("vermelho")
+        $('#caixa').removeClass("verde")
       });
     });
   
