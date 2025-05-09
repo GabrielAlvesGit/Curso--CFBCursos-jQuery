@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+  
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .caixa {
+    display: flex;
+    background-color: #bbb;
+    border: 1px solid #1111;
+    border-radius: 10px 0 0 0; 
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px; 
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+ <p>
+  <button id="btnClonar">clonar</button>
+ </p>
+
+ <div id="caixa" class="caixa">
+  <h2>CFB Cursos - Curso de JQuery</h2>
+ </div>
+ 
+  <script>
+
+    $(document).ready(() => {
+      $('#btnClonar').click(() => {
+        $('#caixa').clone().appendTo("body")
+      });
+    });
+  
+  </script>
+</body>
+</html>
