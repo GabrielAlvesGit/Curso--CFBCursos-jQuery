@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+  
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .caixa {
+    display: flex;
+    background-color: #bbb;
+    border: 1px solid #1111;
+    border-radius: 10px 0 0 0; 
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px; 
+   }
+  
+  .verde {
+    background-color: #0f0;
+  }
+
+  .azul {
+    background-color: #00f;
+  }
+
+  .vermelho {
+    background-color: #f00;
+  }
+
+  .alerta {
+    background-color: #f00;
+  }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+ <p>
+  <button id="btnVerde">Verde</button>
+  <button id="btnVermelho">Vermelho</button>
+  <button id="btnAzul">Azul</button>
+ </p>
+
+ <div id="caixa" class="caixa"></div>
+ <div id="caixa2" class="caixa"></div>
+ 
+  <script>
+
+    $(document).ready(() => {
+      $('#btnVerde').click(() => {
+        $('#caixa').removeClass("azul")
+        $('#caixa').removeClass("vermelho")
+        $('#caixa').addClass("verde")
+      });
+
+      $('#btnVermelho').click(() => {
+        $('#caixa').removeClass("azul")
+        $('#caixa').addClass("vermelho")
+        $('#caixa').removeClass("verde")
+      });
+
+      $('#btnAzul').click(() => {
+        $('#caixa').addClass("azul")
+        $('#caixa').removeClass("vermelho")
+        $('#caixa').removeClass("verde")
+      });
+
+      let alerta = setInterval(() => {
+        $('#caixa').toggleClass("alerta");
+      }, 1000)
+    });
+  
+  </script>
+</body>
+</html>
