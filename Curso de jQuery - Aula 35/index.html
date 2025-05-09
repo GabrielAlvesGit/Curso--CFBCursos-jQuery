@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+  
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .caixa {
+    display: flex;
+    background-color: #bbb;
+    border: 1px solid #1111;
+    border-radius: 10px 0 0 0; 
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px; 
+   }
+  
+   .subcaixa {
+    border: 1px solid #111;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 10px 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+   }
+
+   .texto {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+ <p>
+  <button id="btnVerde">Adicionar</button>
+  <button id="btnVermelho">Remover elemento</button>
+  <button id="btnAzul">Remover elemento</button>
+ </p>
+
+ <div id="caixa" class="caixa"></div>
+ <div id="caixa2" class="caixa"></div>
+ 
+  <script>
+
+    $(document).ready(() => {
+      $('#btnVerde').click(() => {
+        $('#caixa').css({"background-color": "#0f0","color":"#f0f"})
+      });
+
+      $('#btnVermelho').click(() => {
+        $('#caixa').css({"background-color": "#f00","color":"#0ff"})
+      });
+
+      $('#btnAzul').click(() => {
+        $('#caixa').css({"background-color": "#00f","color":"#ff0"})
+      });
+    });
+  
+  </script>
+</body>
+</html>
