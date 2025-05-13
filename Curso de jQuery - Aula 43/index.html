@@ -85,6 +85,11 @@
    .cor5{
     background-color: #088;
    }
+
+   .borda {
+    border: 3px solid #000;
+    border-radius: 20px;
+   }
   </style>
   <title>Document</title>
 </head>
@@ -109,20 +114,37 @@
     </div>
  </div> -->
 
- <br>  
-  <button id="btnPosicao">Posição</button>
-  </br>
-  <label>Topo:</label>
-  <input type="range" id="top" name="top" max="500" />
-  <label>Topo:</label>
-  <input type="range" id="left" name="left" min="0" />
+ <div>  
+    <button id="btnPosicao">Posição</button>
+    <button id="btnRemoverAtributo">Remover Atributo</button>
+    <button id="btnRemoverClasse">Remover Class</button>
+    <button id="btnAdicionarClasse">Adicionar Class</button>
+    </br>
+    <label>Topo:</label>
+    <input type="range" id="top" name="top" max="500" />
+    <label>Left:</label>
+    <input type="range" id="left" name="left" min="0" />
  </div>
 
  <div id="caixa" class="caixa" style="position: absolute; top: 100px; left: 100px; background-color: #f00;"></div>
  
   <script>
 
+
+
     $(document).ready(() => {
+      $("#btnRemoverAtributo").click(() => {
+        $('#caixa').removeAttr("style");
+      })
+
+      $("#btnRemoverClasse").click(() => {
+        $('#caixa').removeClass("borda");
+      })
+
+      $("#btnAdicionarClasse").click(() => {
+        $('#caixa').addClass("borda");
+      })
+
       $('#btnPosicao').click(() => {
           let pt = $('#caixa').position().top;
           let pl = $('#caixa').position().left;
