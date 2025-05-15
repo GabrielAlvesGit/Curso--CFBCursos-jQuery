@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+  
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .cor {
+    color: #f00;
+   }
+
+   .menu {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .cor {
+    background-color: yellow;
+    border: 1px solid #f00;
+    padding: 15px;
+    margin-bottom: 15px;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+
+ <div class="menu">
+  <button id="btn_each">Função each()</button>
+  <button id="btn_cor">Empacotar tudo</button>
+  <!-- <button id="btn_empacotar_depois">Empacotar depois</button> -->
+ </div>
+
+ <p>CFB Cursos</p>
+ <p>CFB Cursos</p>
+ <p>CFB Cursos</p>
+ <p>CFB Cursos</p>
+ <p>CFB Cursos</p>
+ 
+  <script>
+    // let vp = $('p')
+
+
+    
+   $(document).ready(() => {
+     $('#btn_each').click(function() {
+      $('p').each((e) => {
+        alert($(this).text())
+      })
+    })
+ 
+    $('#btn_cor').click(() =>{
+      $('p').each(function() {
+        $(this).addClass('cor')
+      })
+    })
+ 
+   })
+  </script>
+</body>
+</html>
