@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <style>
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .caixa {
+    width: 100px;
+    height: 250px;
+    padding: 10px;
+    border: 5px solid #000;
+    margin: 5px;
+   }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div style="display: flex;">
+    <div id="info" class="caixa">
+      CFB Cursos
+    </div>
+    <img src="aula53.jpg" alt="550px" />
+  </div>
+ 
+  <script>
+    $(document).ready(() => {
+      let cx = $('#info'); 
+
+      $('#info').html(
+        "Width: " + cx.width() + "<br/>" +
+        "Height: " + cx.height() + "<br/>" +
+        "InnerWidth: " + cx.innerWidth() + "<br/>" +
+        "InnerHeight: " + cx.innerHeight() + "<br/>" +
+        "OuterWidth: " + cx.outerWidth() + "<br/>" +
+        "OuterHeight: " + cx.outerHeight() + "<br/>" +
+        "OuterWidth (margin): " + cx.outerWidth(true) + "<br/>" +
+        "OuterHeight (margin): " + cx.outerHeight(true)
+      );
+    });
+  </script>
+</body>
+</html>
